@@ -30,7 +30,7 @@ Face Detect
 
 ## Demonstration
 
-<img src="https://i.ibb.co/z5qZT28/face-Detect.png" alt="face-Detect" border="0">
+<img src="https://i.ibb.co/z5qZT28/face-Detect.png" alt="face-Detect" width="100%" border="0">
 
 ## Install
 

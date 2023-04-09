@@ -1,11 +1,15 @@
 import { useEffect, useState } from "react"
-import { StyleSheet, View } from "react-native"
+import { ImageSourcePropType, StyleSheet, View } from "react-native"
 import { Camera, CameraType, FaceDetectionResult } from "expo-camera"
 import * as FaceDetector from "expo-face-detector"
 import Animated, {
   useSharedValue,
   useAnimatedStyle,
 } from "react-native-reanimated"
+
+import tophatImage from "../assets/tophat.png"
+import smilingImage from "../assets/smiling.png"
+import winkingImage from "../assets/winking.png"
 
 const styles = StyleSheet.create({
   container: {
@@ -18,6 +22,7 @@ const styles = StyleSheet.create({
 
 export function Home() {
   const [faceDetected, setFaceDetected] = useState(false)
+  const [emoji, setEmoji] = useState<ImageSourcePropType>(null)
   const [permission, requestPermission] = Camera.useCameraPermissions()
 
   const faceValues = useSharedValue({
@@ -36,8 +41,8 @@ export function Home() {
       { translateX: faceValues.value.x },
       { translateY: faceValues.value.y },
     ],
-    borderColor: "blue",
-    borderWidth: 10,
+    /* borderColor: "blue",
+    borderWidth: 10, */
   }))
 
   function handleFaceDetected({ faces }: FaceDetectionResult) {
@@ -55,6 +60,17 @@ export function Home() {
       }
 
       setFaceDetected(true)
+
+      if (face.smilingProbability > 0.5) {
+        setEmoji(smilingImage)
+      } else if (
+        face.leftEyeOpenProbability > 0.5 &&
+        face.rightEyeOpenProbability < 0.5
+      ) {
+        setEmoji(winkingImage)
+      } else {
+        setEmoji(null)
+      }
     } else {
       setFaceDetected(false)
     }
@@ -70,7 +86,7 @@ export function Home() {
 
   return (
     <View style={styles.container}>
-      {faceDetected && <Animated.View style={animatedStyle} />}
+      {faceDetected && <Animated.Image style={animatedStyle} source={emoji} />}
       <Camera
         type={CameraType.front}
         style={styles.camera}

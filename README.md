@@ -21,20 +21,12 @@ Face Detect
 - <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" /> — A JavaScript library for building user interfaces
 - <img src="https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" /> — Learn once, write anywhere. Create native apps for Android and iOS using React.
 
-- [ReactJS](https://reactjs.org/)
 - [React Native](https://reactnative.dev/)
-- [Expo](https://expo.dev/)
 - [Typescript](https://www.typescriptlang.org/)
-- [Styled Components](https://styled-components.com/)
-- [React Native SVG](https://github.com/software-mansion/react-native-svg)
-- [React Native SVG Transformer](https://github.com/kristerkari/react-native-svg-transformer)
-- [React Native Responsive Fontsize](https://github.com/heyman333/react-native-responsive-fontsize)
-- [React Native Iphone X Helper](https://npm.io/package/react-native-iphone-x-helper)
-- [React Native Calendars](https://github.com/wix/react-native-calendars)
-- [React Native Navigation](https://reactnavigation.org/docs/getting-started/)
-- [JSON Server](https://github.com/typicode/json-server)
-- [Axios](https://axios-http.com/docs/intro)
-- [Date fns](https://date-fns.org/)
+- [Expo](https://expo.dev/)
+- [expo-camera](https://docs.expo.dev/versions/v48.0.0/sdk/camera/)
+- [expo-face-detector](https://docs.expo.dev/versions/latest/sdk/facedetector/)
+- [react-native-reanimated](https://github.com/software-mansion/react-native-reanimated)
 
 ## Demonstration
 
